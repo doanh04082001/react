@@ -14,7 +14,7 @@ function App() {
 
     const onAddBtnClick = (e) => {
         //thêm text input vào danh sach todoList ở trên
-        // cú pháp ... k nhớ thì search lại
+        // cú pháp ... k nhớ thì search lại nhes
         setTodoList([...todoList,{id:v4(), name:textInput, isCompleted : false},])
     }
     return (
