@@ -1,13 +1,18 @@
 import React from 'react'
 import Todo from './Todo'
-export default function TodoList() {
+export default function TodoList({todoList,onCheckButtonClick}) {
+    console.log(todoList);
+
   return (
     <>
-    {/* gọi file Todo vào đây, mỗi lần tương đương 1 button */}
-        <Todo/>
-        <Todo/>
-        <Todo/>
+    {/* nhận prop todoList */}
+        {
+                            // truyền giá trị todo sang Todo qua thuộc tính có tên todo của component Todo
+            todoList.map((todo) => (
+                // vì dùng vòng map lên thêm key để cho react xác định thành phần nào được thay đổi
+                <Todo key={todo.id} todo={todo} onCheckButtonClick={onCheckButtonClick}/>
+            ))
+        }
     </>
-    
   )
 }
